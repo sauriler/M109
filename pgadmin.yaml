@@ -1,0 +1,69 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pgadmin4
+  namespace: zlic-cwipf1
+  uid: 9822951f-853a-4e39-ab35-1a64dc76f7a2
+  resourceVersion: '1035187743'
+  creationTimestamp: '2023-06-15T12:38:14Z'
+  labels:
+    app: pgadmin4
+    app.kubernetes.io/component: pgadmin4
+    app.kubernetes.io/instance: pgadmin4
+    app.kubernetes.io/name: pgadmin4
+    app.kubernetes.io/part-of: m-109-app
+    app.openshift.io/runtime-version: latest
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2023-06-16T11:35:32Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:openshift.io/generated-by': {}
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/part-of': {}
+            'f:app.openshift.io/runtime-version': {}
+        'f:spec':
+          'f:internalTrafficPolicy': {}
+          'f:ports':
+            .: {}
+            'k:{"port":5050,"protocol":"TCP"}':
+              .: {}
+              'f:name': {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+spec:
+  clusterIP: 172.30.218.116
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: 5050-tcp
+      protocol: TCP
+      port: 5050
+      targetPort: 5050
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - 172.30.218.116
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: pgadmin4
+    deployment: pgadmin4
+status:
+  loadBalancer: {}
